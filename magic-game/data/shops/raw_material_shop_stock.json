@@ -1,0 +1,15 @@
+{
+  "shop_id": "raw_material_shop",
+  "entries": [
+	{"material_id": "fire_crystal", "stock": 12},
+	{"material_id": "water_dew", "stock": 12},
+	{"material_id": "earth_stone", "stock": 12},
+	{"material_id": "wind_feather", "stock": 12},
+	{"material_id": "fire_earth_ore", "stock": 8},
+	{"material_id": "water_wind_mist", "stock": 8},
+	{"material_id": "emberglass_shard", "stock": 6},
+	{"material_id": "moss_amber", "stock": 6},
+	{"material_id": "unstable_mixture", "stock": 4},
+	{"material_id": "stormglass_prism", "stock": 3}
+  ]
+}

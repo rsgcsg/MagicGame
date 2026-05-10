@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="MaterialData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/material_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+sort_order = 30
+material_id = "earth_stone"
+display_name = "Earth Stone"
+button_label = "Earth Stone"
+short_label = "ERT"
+descriptor = "A dense grounding stone prized for sturdy circles and defensive formulas."
+icon_path = ""
+rarity = "common"
+stability = "stable"
+shop_buy_price = 8
+shop_sell_price = 4
+fire = 6
+water = 0
+earth = 50
+wind = 4

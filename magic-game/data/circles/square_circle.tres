@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MagicCircleTemplate" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/magic_circle_template.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+sort_order = 30
+template_id = "square"
+display_name = "Square Circle"
+summary = "Four-point stable frame with even circulation."
+available_in_lab = true
+circle_order = 1
+node_positions = Array[Vector2]([Vector2(-110, -94), Vector2(110, -94), Vector2(110, 94), Vector2(-110, 94)])
+edge_pairs = Array[String](["A:B", "B:C", "C:D", "D:A"])
+bonus_tags = Array[String](["stable", "frame"])
+default_action_point_cost = 1

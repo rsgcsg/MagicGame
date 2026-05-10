@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="MaterialData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/material_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+sort_order = 60
+material_id = "water_wind_mist"
+display_name = "Water-Wind Mist"
+button_label = "Water-Wind Mist"
+short_label = "W/A"
+descriptor = "A drifting mist that supports fluid motion, draw, and evasive spell patterns."
+icon_path = ""
+rarity = "uncommon"
+stability = "stable"
+shop_buy_price = 14
+shop_sell_price = 7
+fire = -1
+water = 38
+earth = 6
+wind = 32

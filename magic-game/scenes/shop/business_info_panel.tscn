@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://dlsvb5lh5youn"]
+
+[ext_resource type="FontFile" uid="uid://4uvpjufltops" path="res://assets/fonts/EBGaramond-VariableFont_wght.ttf" id="1_bfjlr"]
+
+[sub_resource type="Theme" id="Theme_bfjlr"]
+default_font = ExtResource("1_bfjlr")
+default_font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="2"]
+bg_color = Color(0.36, 0.2, 0.08, 0.92)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.19, 0.1, 0.04, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="BusinessInfoPanel" type="PanelContainer" unique_id=2032814441]
+custom_minimum_size = Vector2(297, 162)
+theme = SubResource("Theme_bfjlr")
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=1477587022]
+layout_mode = 2
+
+[node name="Layout" type="VBoxContainer" parent="Margin" unique_id=108770215]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TitleLabel" type="Label" parent="Margin/Layout" unique_id=776639568]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Business Info"
+horizontal_alignment = 1
+
+[node name="GoldRow" type="PanelContainer" parent="Margin/Layout" unique_id=1503562522]
+layout_mode = 2
+theme_override_styles/panel = SubResource("2")
+
+[node name="Margin" type="MarginContainer" parent="Margin/Layout/GoldRow" unique_id=1355482695]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Row" type="HBoxContainer" parent="Margin/Layout/GoldRow/Margin" unique_id=2113926443]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="GoldLabel" type="Label" parent="Margin/Layout/GoldRow/Margin/Row" unique_id=1741229448]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_bfjlr")
+theme_override_font_sizes/font_size = 20
+text = "Gold:"
+
+[node name="GoldValue" type="Label" parent="Margin/Layout/GoldRow/Margin/Row" unique_id=186807698]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_bfjlr")
+theme_override_font_sizes/font_size = 22
+text = "0"
+horizontal_alignment = 2
+
+[node name="CustomersRow" type="PanelContainer" parent="Margin/Layout" unique_id=449431787]
+layout_mode = 2
+theme_override_styles/panel = SubResource("2")
+
+[node name="Margin" type="MarginContainer" parent="Margin/Layout/CustomersRow" unique_id=1498327237]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Row" type="HBoxContainer" parent="Margin/Layout/CustomersRow/Margin" unique_id=1146506862]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="CustomersLabel" type="Label" parent="Margin/Layout/CustomersRow/Margin/Row" unique_id=984166922]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Customers:"
+
+[node name="CustomersValue" type="Label" parent="Margin/Layout/CustomersRow/Margin/Row" unique_id=77153299]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "18 / 20"
+horizontal_alignment = 2
+
+[node name="TimeRow" type="PanelContainer" parent="Margin/Layout" unique_id=593385737]
+layout_mode = 2
+theme_override_styles/panel = SubResource("2")
+
+[node name="Margin" type="MarginContainer" parent="Margin/Layout/TimeRow" unique_id=1442811775]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Row" type="HBoxContainer" parent="Margin/Layout/TimeRow/Margin" unique_id=622496593]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TimeLabel" type="Label" parent="Margin/Layout/TimeRow/Margin/Row" unique_id=599427744]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Time:"
+
+[node name="TimeValue" type="Label" parent="Margin/Layout/TimeRow/Margin/Row" unique_id=1518224801]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Day 12 10:30"
+horizontal_alignment = 2

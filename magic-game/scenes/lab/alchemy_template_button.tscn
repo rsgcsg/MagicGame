@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/lab/alchemy_template_button.gd" id="1"]
+
+[node name="AlchemyTemplateButton" type="Button"]
+custom_minimum_size = Vector2(0, 48)
+size_flags_horizontal = 3
+text = "Template"
+autowrap_mode = 3
+script = ExtResource("1")

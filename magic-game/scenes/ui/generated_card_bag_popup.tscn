@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://c1qe66gwahkj4"]
+
+[ext_resource type="Script" uid="uid://b14cbar0kx3ot" path="res://scripts/ui/generated_card_bag_popup.gd" id="1"]
+
+[node name="GeneratedCardBagPopup" type="PanelContainer" unique_id=892861207]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Backdrop" type="ColorRect" parent="." unique_id=458160394]
+layout_mode = 2
+color = Color(0, 0, 0, 0.42)
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=1002853454]
+layout_mode = 2
+
+[node name="PopupPanel" type="PanelContainer" parent="Margin" unique_id=1287409809]
+layout_mode = 2
+
+[node name="InnerMargin" type="MarginContainer" parent="Margin/PopupPanel" unique_id=865952130]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Layout" type="VBoxContainer" parent="Margin/PopupPanel/InnerMargin" unique_id=2028024274]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Header" type="VBoxContainer" parent="Margin/PopupPanel/InnerMargin/Layout" unique_id=804959994]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TitleLabel" type="Label" parent="Margin/PopupPanel/InnerMargin/Layout/Header" unique_id=40543178]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Generated Card Bag"
+
+[node name="SubtitleLabel" type="Label" parent="Margin/PopupPanel/InnerMargin/Layout/Header" unique_id=472684457]
+layout_mode = 2
+text = "Workshop-facing generated cards."
+autowrap_mode = 3
+
+[node name="SummaryLabel" type="Label" parent="Margin/PopupPanel/InnerMargin/Layout" unique_id=1424327388]
+layout_mode = 2
+text = "External bag: 0 cards"
+autowrap_mode = 3
+
+[node name="BodyScroll" type="ScrollContainer" parent="Margin/PopupPanel/InnerMargin/Layout" unique_id=2096139246]
+custom_minimum_size = Vector2(0, 360)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="EntryList" type="VBoxContainer" parent="Margin/PopupPanel/InnerMargin/Layout/BodyScroll" unique_id=1666287286]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="FooterRow" type="HBoxContainer" parent="Margin/PopupPanel/InnerMargin/Layout" unique_id=813275382]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="StatusLabel" type="Label" parent="Margin/PopupPanel/InnerMargin/Layout/FooterRow" unique_id=1818319653]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Battle cards are copied from the selected loadout."
+autowrap_mode = 3
+
+[node name="ClearSelectionButton" type="Button" parent="Margin/PopupPanel/InnerMargin/Layout/FooterRow" unique_id=1762569315]
+custom_minimum_size = Vector2(124, 36)
+layout_mode = 2
+text = "Clear Selection"
+
+[node name="CloseButton" type="Button" parent="Margin/PopupPanel/InnerMargin/Layout/FooterRow" unique_id=482653301]
+custom_minimum_size = Vector2(96, 36)
+layout_mode = 2
+text = "Close"

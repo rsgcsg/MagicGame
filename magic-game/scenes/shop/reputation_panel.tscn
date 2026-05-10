@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://csewxcfhf4462"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(0.63, 0.36, 0.12, 0.95)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.14, 0.08, 0.03, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.25)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="2"]
+bg_color = Color(0.18, 0.11, 0.05, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.19, 0.1, 0.04, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="ReputationPanel" type="PanelContainer" unique_id=900698923]
+custom_minimum_size = Vector2(325, 148)
+theme_override_styles/panel = SubResource("1")
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=499498549]
+layout_mode = 2
+
+[node name="Layout" type="VBoxContainer" parent="Margin" unique_id=1212137401]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TitleRow" type="HBoxContainer" parent="Margin/Layout" unique_id=171552504]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="IconLabel" type="Label" parent="Margin/Layout/TitleRow" unique_id=1884281739]
+custom_minimum_size = Vector2(48, 28)
+layout_mode = 2
+text = "Roll"
+
+[node name="TitleLabel" type="Label" parent="Margin/Layout/TitleRow" unique_id=1175752534]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Shop Reputation"
+
+[node name="StarsLabel" type="Label" parent="Margin/Layout" unique_id=975611117]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "★ ★ ★ ☆ ☆ ☆"
+
+[node name="ProgressBox" type="PanelContainer" parent="Margin/Layout" unique_id=810296689]
+layout_mode = 2
+theme_override_styles/panel = SubResource("2")
+
+[node name="ProgressMargin" type="MarginContainer" parent="Margin/Layout/ProgressBox" unique_id=378628763]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="ProgressBar" type="ProgressBar" parent="Margin/Layout/ProgressBox/ProgressMargin" unique_id=20749179]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+max_value = 200.0
+value = 120.0
+show_percentage = false
+
+[node name="ProgressLabel" type="Label" parent="Margin/Layout/ProgressBox/ProgressMargin" unique_id=898422691]
+layout_mode = 2
+text = "120 / 200"
+horizontal_alignment = 1
+vertical_alignment = 1

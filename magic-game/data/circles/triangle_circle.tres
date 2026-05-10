@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MagicCircleTemplate" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/magic_circle_template.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+sort_order = 20
+template_id = "triangle"
+display_name = "Triangle Circle"
+summary = "Three-point balanced first-order circle."
+available_in_lab = true
+circle_order = 1
+node_positions = Array[Vector2]([Vector2(0, -112), Vector2(-118, 92), Vector2(118, 92)])
+edge_pairs = Array[String](["A:B", "B:C", "C:A"])
+bonus_tags = Array[String](["starter", "balanced"])
+default_action_point_cost = 1

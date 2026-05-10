@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="MaterialData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/material_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+sort_order = 112
+material_id = "gravebloom_pollen"
+display_name = "Gravebloom Pollen"
+button_label = "Gravebloom"
+short_label = "G/P"
+descriptor = "A rare pale pollen gathered from hollow flowers, heavy with earth-water force and dangerous drift."
+icon_path = ""
+rarity = "rare"
+stability = "volatile"
+shop_buy_price = 24
+shop_sell_price = 12
+fire = -6
+water = 18
+earth = 30
+wind = 8

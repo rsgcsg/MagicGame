@@ -1,0 +1,279 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/lab/alchemy_table_popup.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/magic_circle/magic_circle_editor.tscn" id="2"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(0.16, 0.105, 0.07, 0.98)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.55, 0.36, 0.18, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.35)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="2"]
+bg_color = Color(0.91, 0.79, 0.56, 0.96)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.34, 0.18, 0.08, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="3"]
+bg_color = Color(0.74, 0.49, 0.2, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.22, 0.1, 0.04, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="AlchemyTablePopup" type="PanelContainer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Backdrop" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.42)
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+offset_top = 38.0
+offset_right = -42.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PopupPanel" type="PanelContainer" parent="Margin"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("1")
+
+[node name="InnerMargin" type="MarginContainer" parent="Margin/PopupPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 16
+
+[node name="Layout" type="VBoxContainer" parent="Margin/PopupPanel/InnerMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Header" type="HBoxContainer" parent="Margin/PopupPanel/InnerMargin/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TitleBlock" type="VBoxContainer" parent="Margin/PopupPanel/InnerMargin/Layout/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TitleLabel" type="Label" parent="Margin/PopupPanel/InnerMargin/Layout/Header/TitleBlock"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.86, 0.56, 1)
+theme_override_font_sizes/font_size = 30
+text = "Alchemy Table"
+
+[node name="SubtitleLabel" type="Label" parent="Margin/PopupPanel/InnerMargin/Layout/Header/TitleBlock"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.79, 0.68, 0.52, 1)
+text = "Draft experimental cards from circle forms and elemental materials."
+
+[node name="CloseButton" type="Button" parent="Margin/PopupPanel/InnerMargin/Layout/Header"]
+custom_minimum_size = Vector2(92, 36)
+layout_mode = 2
+text = "Close"
+
+[node name="MainColumns" type="HBoxContainer" parent="Margin/PopupPanel/InnerMargin/Layout"]
+custom_minimum_size = Vector2(0, 468)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="TemplateLibraryPanel" type="PanelContainer" parent="Margin/PopupPanel/InnerMargin/Layout/MainColumns"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("2")
+
+[node name="TemplateMargin" type="MarginContainer" parent="Margin/PopupPanel/InnerMargin/Layout/MainColumns/TemplateLibraryPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="TemplateLayout" type="VBoxContainer" parent="Margin/PopupPanel/InnerMargin/Layout/MainColumns/TemplateLibraryPanel/TemplateMargin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TemplateTitleLabel" type="Label" parent="Margin/PopupPanel/InnerMargin/Layout/MainColumns/TemplateLibraryPanel/TemplateMargin/TemplateLayout"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Template Library"
+
+[node name="TemplateHintLabel" type="Label" parent="Margin/PopupPanel/InnerMargin/Layout/MainColumns/TemplateLibraryPanel/TemplateMargin/TemplateLayout"]
+layout_mode = 2
+text = "Selectable first-order forms"
+autowrap_mode = 3
+
+[node name="TemplateScroll" type="ScrollContainer" parent="Margin/PopupPanel/InnerMargin/Layout/MainColumns/TemplateLibraryPanel/TemplateMargin/TemplateLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="TemplateList" type="VBoxContainer" parent="Margin/PopupPanel/InnerMargin/Layout/MainColumns/TemplateLibraryPanel/TemplateMargin/TemplateLayout/TemplateScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="MagicCircleEditor" parent="Margin/PopupPanel/InnerMargin/Layout/MainColumns" instance=ExtResource("2")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RightRail" type="VBoxContainer" parent="Margin/PopupPanel/InnerMargin/Layout/MainColumns"]
+custom_minimum_size = Vector2(286, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="MaterialBagPanel" type="PanelContainer" parent="Margin/PopupPanel/InnerMargin/Layout/MainColumns/RightRail"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("2")
+
+[node name="MaterialMargin" type="MarginContainer" parent="Margin/PopupPanel/InnerMargin/Layout/MainColumns/RightRail/MaterialBagPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="MaterialLayout" type="VBoxContainer" parent="Margin/PopupPanel/InnerMargin/Layout/MainColumns/RightRail/MaterialBagPanel/MaterialMargin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MaterialTitleLabel" type="Label" parent="Margin/PopupPanel/InnerMargin/Layout/MainColumns/RightRail/MaterialBagPanel/MaterialMargin/MaterialLayout"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Material Bag"
+
+[node name="MaterialScroll" type="ScrollContainer" parent="Margin/PopupPanel/InnerMargin/Layout/MainColumns/RightRail/MaterialBagPanel/MaterialMargin/MaterialLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="MaterialList" type="GridContainer" parent="Margin/PopupPanel/InnerMargin/Layout/MainColumns/RightRail/MaterialBagPanel/MaterialMargin/MaterialLayout/MaterialScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+
+[node name="PreviewPanel" type="PanelContainer" parent="Margin/PopupPanel/InnerMargin/Layout/MainColumns/RightRail"]
+custom_minimum_size = Vector2(0, 180)
+layout_mode = 2
+theme_override_styles/panel = SubResource("2")
+
+[node name="PreviewMargin" type="MarginContainer" parent="Margin/PopupPanel/InnerMargin/Layout/MainColumns/RightRail/PreviewPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="PreviewScroll" type="ScrollContainer" parent="Margin/PopupPanel/InnerMargin/Layout/MainColumns/RightRail/PreviewPanel/PreviewMargin"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PreviewLayout" type="VBoxContainer" parent="Margin/PopupPanel/InnerMargin/Layout/MainColumns/RightRail/PreviewPanel/PreviewMargin/PreviewScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="PreviewTitleLabel" type="Label" parent="Margin/PopupPanel/InnerMargin/Layout/MainColumns/RightRail/PreviewPanel/PreviewMargin/PreviewScroll/PreviewLayout"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Table Status"
+
+[node name="SelectedTemplateLabel" type="Label" parent="Margin/PopupPanel/InnerMargin/Layout/MainColumns/RightRail/PreviewPanel/PreviewMargin/PreviewScroll/PreviewLayout"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Template: Triangle Circle"
+autowrap_mode = 3
+
+[node name="SelectedMaterialsLabel" type="Label" parent="Margin/PopupPanel/InnerMargin/Layout/MainColumns/RightRail/PreviewPanel/PreviewMargin/PreviewScroll/PreviewLayout"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Materials: None"
+autowrap_mode = 3
+
+[node name="CircleStatusLabel" type="Label" parent="Margin/PopupPanel/InnerMargin/Layout/MainColumns/RightRail/PreviewPanel/PreviewMargin/PreviewScroll/PreviewLayout"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Status: Awaiting complete circle"
+autowrap_mode = 3
+
+[node name="GeneratedResultLabel" type="Label" parent="Margin/PopupPanel/InnerMargin/Layout/MainColumns/RightRail/PreviewPanel/PreviewMargin/PreviewScroll/PreviewLayout"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Generated Card Bag: 0 cards"
+autowrap_mode = 3
+
+[node name="ButtonRow" type="HBoxContainer" parent="Margin/PopupPanel/InnerMargin/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="StatusLabel" type="Label" parent="Margin/PopupPanel/InnerMargin/Layout/ButtonRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.79, 0.68, 0.52, 1)
+text = "The table waits for a stable circle imprint."
+autowrap_mode = 3
+
+[node name="ResetCircleButton" type="Button" parent="Margin/PopupPanel/InnerMargin/Layout/ButtonRow"]
+custom_minimum_size = Vector2(132, 36)
+layout_mode = 2
+disabled = true
+text = "Reset Circle"
+
+[node name="GenerateCardButton" type="Button" parent="Margin/PopupPanel/InnerMargin/Layout/ButtonRow"]
+custom_minimum_size = Vector2(168, 36)
+layout_mode = 2
+disabled = true
+text = "Generate Card"
+
+[node name="PopupLayer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

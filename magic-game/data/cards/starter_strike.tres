@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="GeneratedCardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/generated_card_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+card_id = "starter_strike"
+display_name = "Starter Strike"
+description = "A stable practice card that returns through the discard loop instead of being consumed."
+action_point_cost = 1
+single_use = false
+effect_lines = Array[String](["Deal 4 damage"])
+combat_payload = {
+"effects": Array[Dictionary]([{
+"target": "enemy",
+"type": "damage",
+"value": 4
+}]),
+"target": "enemy"
+}
+algorithm_id = "starter_loadout"
+debug_summary = "Default external backpack starter attack card."

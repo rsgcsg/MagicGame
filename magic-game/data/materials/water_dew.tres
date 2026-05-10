@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="MaterialData" format=3 uid="uid://ybbogebiua7u"]
+
+[ext_resource type="Script" uid="uid://b36cb5b657rcs" path="res://scripts/data/material_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+sort_order = 20
+material_id = "water_dew"
+display_name = "Water Dew"
+button_label = "Water Dew"
+short_label = "WAT"
+descriptor = "Condensed cave dew that leans strongly toward fluid and cooling circle effects."
+shop_buy_price = 8
+shop_sell_price = 4
+water = 46
+earth = 4
+wind = 10

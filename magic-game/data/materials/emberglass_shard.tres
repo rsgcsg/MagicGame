@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="MaterialData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/material_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+sort_order = 80
+material_id = "emberglass_shard"
+display_name = "Emberglass Shard"
+button_label = "Emberglass"
+short_label = "E/G"
+descriptor = "A sharp hybrid shard carrying bright fire and cutting wind resonance."
+icon_path = ""
+rarity = "uncommon"
+stability = "reactive"
+shop_buy_price = 16
+shop_sell_price = 8
+fire = 32
+water = -4
+earth = 6
+wind = 26

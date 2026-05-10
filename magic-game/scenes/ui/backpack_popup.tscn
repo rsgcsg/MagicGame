@@ -1,0 +1,186 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/backpack_popup.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/ui/card_backpack_panel.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/ui/material_bag_panel.tscn" id="3"]
+
+[node name="BackpackPopup" type="PanelContainer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Backdrop" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.42)
+
+[node name="BackdropMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 108.0
+offset_top = 64.0
+offset_right = -108.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PopupPanel" type="PanelContainer" parent="BackdropMargin"]
+layout_mode = 2
+
+[node name="InnerMargin" type="MarginContainer" parent="BackdropMargin/PopupPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Layout" type="VBoxContainer" parent="BackdropMargin/PopupPanel/InnerMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Header" type="HBoxContainer" parent="BackdropMargin/PopupPanel/InnerMargin/Layout"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="BackdropMargin/PopupPanel/InnerMargin/Layout/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "Backpack"
+
+[node name="CloseButton" type="Button" parent="BackdropMargin/PopupPanel/InnerMargin/Layout/Header"]
+layout_mode = 2
+text = "Close"
+
+[node name="SummaryLabel" type="Label" parent="BackdropMargin/PopupPanel/InnerMargin/Layout"]
+layout_mode = 2
+text = "External Backpack: workshop cards and materials stored outside expedition state."
+autowrap_mode = 3
+
+[node name="ToolbarRow" type="HBoxContainer" parent="BackdropMargin/PopupPanel/InnerMargin/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="ScopePanel" type="PanelContainer" parent="BackdropMargin/PopupPanel/InnerMargin/Layout/ToolbarRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScopeMargin" type="MarginContainer" parent="BackdropMargin/PopupPanel/InnerMargin/Layout/ToolbarRow/ScopePanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 10
+
+[node name="ScopeLayout" type="VBoxContainer" parent="BackdropMargin/PopupPanel/InnerMargin/Layout/ToolbarRow/ScopePanel/ScopeMargin"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="ScopeTitleLabel" type="Label" parent="BackdropMargin/PopupPanel/InnerMargin/Layout/ToolbarRow/ScopePanel/ScopeMargin/ScopeLayout"]
+layout_mode = 2
+text = "Inventory Scope"
+
+[node name="ScopeRow" type="HBoxContainer" parent="BackdropMargin/PopupPanel/InnerMargin/Layout/ToolbarRow/ScopePanel/ScopeMargin/ScopeLayout"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ExternalScopeButton" type="Button" parent="BackdropMargin/PopupPanel/InnerMargin/Layout/ToolbarRow/ScopePanel/ScopeMargin/ScopeLayout/ScopeRow"]
+custom_minimum_size = Vector2(140, 38)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "External"
+
+[node name="ExpeditionScopeButton" type="Button" parent="BackdropMargin/PopupPanel/InnerMargin/Layout/ToolbarRow/ScopePanel/ScopeMargin/ScopeLayout/ScopeRow"]
+custom_minimum_size = Vector2(140, 38)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Current Realm"
+
+[node name="SectionPanel" type="PanelContainer" parent="BackdropMargin/PopupPanel/InnerMargin/Layout/ToolbarRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SectionMargin" type="MarginContainer" parent="BackdropMargin/PopupPanel/InnerMargin/Layout/ToolbarRow/SectionPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 10
+
+[node name="SectionLayout" type="VBoxContainer" parent="BackdropMargin/PopupPanel/InnerMargin/Layout/ToolbarRow/SectionPanel/SectionMargin"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="SectionTitleLabel" type="Label" parent="BackdropMargin/PopupPanel/InnerMargin/Layout/ToolbarRow/SectionPanel/SectionMargin/SectionLayout"]
+layout_mode = 2
+text = "Backpack Section"
+
+[node name="SectionRow" type="HBoxContainer" parent="BackdropMargin/PopupPanel/InnerMargin/Layout/ToolbarRow/SectionPanel/SectionMargin/SectionLayout"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="CardsSectionButton" type="Button" parent="BackdropMargin/PopupPanel/InnerMargin/Layout/ToolbarRow/SectionPanel/SectionMargin/SectionLayout/SectionRow"]
+custom_minimum_size = Vector2(120, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cards"
+
+[node name="MaterialsSectionButton" type="Button" parent="BackdropMargin/PopupPanel/InnerMargin/Layout/ToolbarRow/SectionPanel/SectionMargin/SectionLayout/SectionRow"]
+custom_minimum_size = Vector2(120, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Materials"
+
+[node name="BodyPanel" type="PanelContainer" parent="BackdropMargin/PopupPanel/InnerMargin/Layout"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BodyMargin" type="MarginContainer" parent="BackdropMargin/PopupPanel/InnerMargin/Layout/BodyPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Body" type="Control" parent="BackdropMargin/PopupPanel/InnerMargin/Layout/BodyPanel/BodyMargin"]
+custom_minimum_size = Vector2(0, 360)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CardBackpackPanel" parent="BackdropMargin/PopupPanel/InnerMargin/Layout/BodyPanel/BodyMargin/Body" instance=ExtResource("2")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+title_text = "External Cards"
+
+[node name="MaterialBagPanel" parent="BackdropMargin/PopupPanel/InnerMargin/Layout/BodyPanel/BodyMargin/Body" instance=ExtResource("3")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+title_text = "External Materials"
+
+[node name="FooterRow" type="HBoxContainer" parent="BackdropMargin/PopupPanel/InnerMargin/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="StatusLabel" type="Label" parent="BackdropMargin/PopupPanel/InnerMargin/Layout/FooterRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "External resources are safe outside battle. Realm loadout transfer moves selected cards out only when the expedition starts."
+autowrap_mode = 3

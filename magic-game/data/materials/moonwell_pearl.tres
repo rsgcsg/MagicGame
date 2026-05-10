@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="MaterialData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/material_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+sort_order = 84
+material_id = "moonwell_pearl"
+display_name = "Moonwell Pearl"
+button_label = "Moonwell Pearl"
+short_label = "M/P"
+descriptor = "A cool pearl that supports smooth water-wind utility recipes with mild refining pressure."
+icon_path = ""
+rarity = "uncommon"
+stability = "refined"
+shop_buy_price = 16
+shop_sell_price = 8
+fire = -1
+water = 32
+earth = 6
+wind = 18

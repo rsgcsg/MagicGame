@@ -1,0 +1,653 @@
+[gd_scene format=3 uid="uid://dqqp64n0rhhx5"]
+
+[ext_resource type="Script" uid="uid://b5l4gaxs4m22g" path="res://scripts/battle/battle_scene.gd" id="1_x3s1x"]
+[ext_resource type="Texture2D" uid="uid://cjr2nf0f3n2gs" path="res://assets/images/fight/Image_20260509163128_5154_220.jpg" id="2_441fx"]
+[ext_resource type="PackedScene" path="res://scenes/ui/top_status_bar.tscn" id="3_l0w60"]
+[ext_resource type="Texture2D" path="res://assets/images/fight/Image_20260509150834_5150_220.jpg" id="4_x3s1x"]
+[ext_resource type="PackedScene" path="res://scenes/battle/hand_view.tscn" id="5_koo5g"]
+[ext_resource type="Script" path="res://scripts/battle/battle_feedback_layer.gd" id="6_6o5rt"]
+
+[sub_resource type="StyleBoxFlat" id="5"]
+bg_color = Color(0.15, 0.09, 0.18, 0.88)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.79, 0.62, 0.95, 0.92)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="7"]
+bg_color = Color(0.09, 0.075, 0.08, 0.82)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.74, 0.56, 0.24, 0.65)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="3"]
+bg_color = Color(0.12, 0.08, 0.06, 0.88)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.82, 0.66, 0.34, 0.95)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="2"]
+bg_color = Color(0.07, 0.055, 0.05, 0.78)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.74, 0.56, 0.24, 0.92)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.25)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="4"]
+bg_color = Color(0.05, 0.16, 0.46, 0.88)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.52, 0.82, 1, 0.96)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="6"]
+bg_color = Color(0.86, 0.74, 0.52, 0.9)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.17, 0.1, 0.05, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="BattleScene" type="Control" unique_id=452176916]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x3s1x")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1071037888]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_441fx")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Shading" type="ColorRect" parent="." unique_id=1376351391]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.015, 0.015, 0.035, 0.2)
+
+[node name="Content" type="Control" parent="." unique_id=1197914680]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopStatusBar" parent="Content" unique_id=751563584 instance=ExtResource("3_l0w60")]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 1248.0
+offset_bottom = 64.0
+
+[node name="EnemyArea" type="VBoxContainer" parent="Content" unique_id=253210561]
+layout_mode = 0
+offset_left = 446.0
+offset_top = 72.0
+offset_right = 834.0
+offset_bottom = 385.0
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="EnemyNameLabel" type="Label" parent="Content/EnemyArea" unique_id=278633189]
+modulate = Color(0.96, 0.92, 0.84, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Enemy: Slime"
+horizontal_alignment = 1
+
+[node name="EnemyIntentPanel" type="PanelContainer" parent="Content/EnemyArea" unique_id=1780557889]
+custom_minimum_size = Vector2(240, 42)
+layout_mode = 2
+theme_override_styles/panel = SubResource("5")
+
+[node name="EnemyIntentMargin" type="MarginContainer" parent="Content/EnemyArea/EnemyIntentPanel" unique_id=410428279]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 8
+
+[node name="EnemyIntentLabel" type="Label" parent="Content/EnemyArea/EnemyIntentPanel/EnemyIntentMargin" unique_id=1205572050]
+modulate = Color(0.95, 0.9, 0.98, 1)
+layout_mode = 2
+text = "Intent: Attack 6"
+horizontal_alignment = 1
+
+[node name="EnemyImage" type="TextureRect" parent="Content/EnemyArea" unique_id=1365151169]
+custom_minimum_size = Vector2(240, 170)
+layout_mode = 2
+texture = ExtResource("4_x3s1x")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="EnemyFooterRow" type="HBoxContainer" parent="Content/EnemyArea" unique_id=1072231620]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="EnemyHpPanel" type="PanelContainer" parent="Content/EnemyArea/EnemyFooterRow" unique_id=458419897]
+custom_minimum_size = Vector2(132, 34)
+layout_mode = 2
+theme_override_styles/panel = SubResource("7")
+
+[node name="EnemyHpMargin" type="MarginContainer" parent="Content/EnemyArea/EnemyFooterRow/EnemyHpPanel" unique_id=1883123200]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="EnemyHpLabel" type="Label" parent="Content/EnemyArea/EnemyFooterRow/EnemyHpPanel/EnemyHpMargin" unique_id=996381506]
+modulate = Color(0.8, 0.95, 1, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "12/12 HP"
+horizontal_alignment = 1
+
+[node name="EnemyStatusPanel" type="PanelContainer" parent="Content/EnemyArea/EnemyFooterRow" unique_id=359354910]
+custom_minimum_size = Vector2(170, 34)
+layout_mode = 2
+theme_override_styles/panel = SubResource("7")
+
+[node name="EnemyStatusMargin" type="MarginContainer" parent="Content/EnemyArea/EnemyFooterRow/EnemyStatusPanel" unique_id=1319983384]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="EnemyStatusLayout" type="VBoxContainer" parent="Content/EnemyArea/EnemyFooterRow/EnemyStatusPanel/EnemyStatusMargin" unique_id=1592246654]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="EnemyStatusEmptyLabel" type="Label" parent="Content/EnemyArea/EnemyFooterRow/EnemyStatusPanel/EnemyStatusMargin/EnemyStatusLayout" unique_id=1186267461]
+modulate = Color(0.86, 0.8, 0.74, 0.86)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "No statuses"
+horizontal_alignment = 1
+
+[node name="EnemyStatusFlow" type="HFlowContainer" parent="Content/EnemyArea/EnemyFooterRow/EnemyStatusPanel/EnemyStatusMargin/EnemyStatusLayout" unique_id=391708704]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 2
+alignment = 1
+
+[node name="FailureMessageLabel" type="Label" parent="Content" unique_id=436575342]
+visible = false
+modulate = Color(1, 0.72, 0.68, 1)
+layout_mode = 0
+offset_left = 380.0
+offset_top = 390.0
+offset_right = 900.0
+offset_bottom = 424.0
+theme_override_font_sizes/font_size = 24
+text = "Battle Failed - Mana depleted"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VictoryMessageLabel" type="Label" parent="Content" unique_id=1854150450]
+visible = false
+modulate = Color(0.72, 1, 0.78, 1)
+layout_mode = 0
+offset_left = 380.0
+offset_top = 356.0
+offset_right = 900.0
+offset_bottom = 390.0
+theme_override_font_sizes/font_size = 24
+text = "Battle Won - Enemy defeated"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BattleEndedStatusLabel" type="Label" parent="Content" unique_id=1031543328]
+visible = false
+modulate = Color(0.93, 0.9, 0.82, 1)
+layout_mode = 0
+offset_left = 380.0
+offset_top = 424.0
+offset_right = 900.0
+offset_bottom = 452.0
+theme_override_font_sizes/font_size = 16
+text = "Battle Ended - Actions disabled"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DrawPilePanel" type="PanelContainer" parent="Content" unique_id=2088057687]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 502.0
+offset_right = 164.0
+offset_bottom = 619.0
+theme_override_styles/panel = SubResource("3")
+
+[node name="DrawPileMargin" type="MarginContainer" parent="Content/DrawPilePanel" unique_id=730473244]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 14
+
+[node name="PileLayout" type="VBoxContainer" parent="Content/DrawPilePanel/DrawPileMargin" unique_id=411187169]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="Content/DrawPilePanel/DrawPileMargin/PileLayout" unique_id=890131268]
+modulate = Color(0.95, 0.84, 0.64, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Draw Pile"
+horizontal_alignment = 1
+
+[node name="DrawPileLabel" type="Label" parent="Content/DrawPilePanel/DrawPileMargin/PileLayout" unique_id=1793395749]
+modulate = Color(0.92, 0.9, 0.86, 1)
+layout_mode = 2
+text = "Draw Pile: Placeholder"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HandInfoLayout" type="VBoxContainer" parent="Content" unique_id=2023868362]
+layout_mode = 0
+offset_left = 366.0
+offset_top = 414.0
+offset_right = 914.0
+offset_bottom = 458.0
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="HandPlaceholderLabel" type="Label" parent="Content/HandInfoLayout" unique_id=1601331419]
+modulate = Color(0.95, 0.9, 0.82, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Hand Placeholder: 5 cards ready"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardFeedbackLabel" type="Label" parent="Content/HandInfoLayout" unique_id=1483163187]
+modulate = Color(0.95, 0.9, 0.82, 0.92)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Left click to play a card. Right click to discard."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HandPanel" type="PanelContainer" parent="Content" unique_id=48798378]
+clip_contents = true
+layout_mode = 0
+offset_left = 199.0
+offset_top = 470.0
+offset_right = 1080.0
+offset_bottom = 618.0
+theme_override_styles/panel = SubResource("2")
+
+[node name="HandMargin" type="MarginContainer" parent="Content/HandPanel" unique_id=289227702]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 8
+
+[node name="HandLayout" type="VBoxContainer" parent="Content/HandPanel/HandMargin" unique_id=149431516]
+layout_mode = 2
+alignment = 1
+
+[node name="HandView" parent="Content/HandPanel/HandMargin/HandLayout" unique_id=142115153 instance=ExtResource("5_koo5g")]
+
+[node name="DiscardPilePanel" type="PanelContainer" parent="Content" unique_id=1956981503]
+layout_mode = 0
+offset_left = 1121.0
+offset_top = 508.0
+offset_right = 1257.0
+offset_bottom = 628.0
+theme_override_styles/panel = SubResource("3")
+
+[node name="DiscardPileMargin" type="MarginContainer" parent="Content/DiscardPilePanel" unique_id=2072705587]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 14
+
+[node name="PileLayout" type="VBoxContainer" parent="Content/DiscardPilePanel/DiscardPileMargin" unique_id=1311750229]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="Content/DiscardPilePanel/DiscardPileMargin/PileLayout" unique_id=1647146079]
+modulate = Color(0.95, 0.84, 0.64, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Discard Pile"
+horizontal_alignment = 1
+
+[node name="DiscardPileLabel" type="Label" parent="Content/DiscardPilePanel/DiscardPileMargin/PileLayout" unique_id=1370042947]
+modulate = Color(0.92, 0.9, 0.86, 1)
+layout_mode = 2
+text = "Discard Pile: Placeholder"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="PlayerResourceBar" type="HBoxContainer" parent="Content" unique_id=1094085563]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 660.0
+offset_right = 985.0
+offset_bottom = 712.0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="ManaPanel" type="PanelContainer" parent="Content/PlayerResourceBar" unique_id=270064657]
+custom_minimum_size = Vector2(300, 44)
+layout_mode = 2
+theme_override_styles/panel = SubResource("4")
+
+[node name="ManaMargin" type="MarginContainer" parent="Content/PlayerResourceBar/ManaPanel" unique_id=1962744364]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 10
+
+[node name="ManaLabel" type="Label" parent="Content/PlayerResourceBar/ManaPanel/ManaMargin" unique_id=1525060688]
+modulate = Color(0.94, 0.98, 1, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "Battle Mana: Placeholder"
+horizontal_alignment = 1
+
+[node name="BlockPanel" type="PanelContainer" parent="Content/PlayerResourceBar" unique_id=1999200304]
+custom_minimum_size = Vector2(140, 44)
+layout_mode = 2
+theme_override_styles/panel = SubResource("4")
+
+[node name="BlockMargin" type="MarginContainer" parent="Content/PlayerResourceBar/BlockPanel" unique_id=1302186318]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 10
+
+[node name="BlockLabel" type="Label" parent="Content/PlayerResourceBar/BlockPanel/BlockMargin" unique_id=1143049871]
+modulate = Color(0.94, 0.98, 1, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "Block: 0"
+horizontal_alignment = 1
+
+[node name="ActionPointsPanel" type="PanelContainer" parent="Content/PlayerResourceBar" unique_id=1122351901]
+custom_minimum_size = Vector2(180, 44)
+layout_mode = 2
+theme_override_styles/panel = SubResource("4")
+
+[node name="ActionPointsMargin" type="MarginContainer" parent="Content/PlayerResourceBar/ActionPointsPanel" unique_id=1589415964]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 10
+
+[node name="ActionPointsLabel" type="Label" parent="Content/PlayerResourceBar/ActionPointsPanel/ActionPointsMargin" unique_id=1104110180]
+modulate = Color(0.94, 0.98, 1, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "Action Points: 3"
+horizontal_alignment = 1
+
+[node name="PlayerStatusPanel" type="PanelContainer" parent="Content" unique_id=1059292378]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 715.0
+offset_right = 934.0
+offset_bottom = 737.0
+theme_override_styles/panel = SubResource("7")
+
+[node name="PlayerStatusMargin" type="MarginContainer" parent="Content/PlayerStatusPanel" unique_id=314878155]
+layout_mode = 2
+
+[node name="PlayerStatusLayout" type="VBoxContainer" parent="Content/PlayerStatusPanel/PlayerStatusMargin" unique_id=1936551425]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="PlayerStatusEmptyLabel" type="Label" parent="Content/PlayerStatusPanel/PlayerStatusMargin/PlayerStatusLayout" unique_id=1100748362]
+modulate = Color(0.86, 0.8, 0.74, 0.86)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "No statuses"
+horizontal_alignment = 1
+
+[node name="PlayerStatusFlow" type="HFlowContainer" parent="Content/PlayerStatusPanel/PlayerStatusMargin/PlayerStatusLayout" unique_id=1525149032]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 1
+alignment = 1
+
+[node name="EndTurnPanel" type="PanelContainer" parent="Content" unique_id=431533329]
+layout_mode = 0
+offset_left = 1044.0
+offset_top = 644.0
+offset_right = 1248.0
+offset_bottom = 714.0
+theme_override_styles/panel = SubResource("5")
+
+[node name="Margin" type="MarginContainer" parent="Content/EndTurnPanel" unique_id=61445991]
+layout_mode = 2
+
+[node name="EndTurnButton" type="Button" parent="Content/EndTurnPanel/Margin" unique_id=1029640539]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "End Turn"
+
+[node name="FeedbackLayer" type="Control" parent="." unique_id=1614304928]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("6_6o5rt")
+background_path = NodePath("../Background")
+shading_path = NodePath("../Shading")
+content_root_path = NodePath("../Content")
+enemy_image_path = NodePath("../Content/EnemyArea/EnemyImage")
+player_feedback_anchor_path = NodePath("../Content/PlayerResourceBar")
+
+[node name="TurnBannerLabel" type="Label" parent="FeedbackLayer" unique_id=416005300]
+visible = false
+modulate = Color(0.98, 0.94, 0.84, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 130.0
+offset_top = 424.0
+offset_right = 470.0
+offset_bottom = 468.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Enemy Turn"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FloatingTextMount" type="Control" parent="FeedbackLayer" unique_id=297126446]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ResultOverlayLayer" type="CanvasLayer" parent="." unique_id=1720163914]
+layer = 20
+
+[node name="ResultOverlay" type="Control" parent="ResultOverlayLayer" unique_id=1754505234]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Backdrop" type="ColorRect" parent="ResultOverlayLayer/ResultOverlay" unique_id=813340836]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.02, 0.02, 0.04, 0.56)
+
+[node name="ResultCenter" type="CenterContainer" parent="ResultOverlayLayer/ResultOverlay" unique_id=1664725093]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResultPanel" type="PanelContainer" parent="ResultOverlayLayer/ResultOverlay/ResultCenter" unique_id=611753516]
+custom_minimum_size = Vector2(560, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("6")
+
+[node name="ResultMargin" type="MarginContainer" parent="ResultOverlayLayer/ResultOverlay/ResultCenter/ResultPanel" unique_id=219241132]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 14
+
+[node name="ResultLayout" type="VBoxContainer" parent="ResultOverlayLayer/ResultOverlay/ResultCenter/ResultPanel/ResultMargin" unique_id=672788958]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="ResultTitleLabel" type="Label" parent="ResultOverlayLayer/ResultOverlay/ResultCenter/ResultPanel/ResultMargin/ResultLayout" unique_id=640768666]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Battle Result"
+horizontal_alignment = 1
+
+[node name="ResultDescriptionLabel" type="Label" parent="ResultOverlayLayer/ResultOverlay/ResultCenter/ResultPanel/ResultMargin/ResultLayout" unique_id=1264605234]
+layout_mode = 2
+text = "Battle result details."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="RewardPlaceholderPanel" type="PanelContainer" parent="ResultOverlayLayer/ResultOverlay/ResultCenter/ResultPanel/ResultMargin/ResultLayout" unique_id=1374978448]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("7")
+
+[node name="RewardMargin" type="MarginContainer" parent="ResultOverlayLayer/ResultOverlay/ResultCenter/ResultPanel/ResultMargin/ResultLayout/RewardPlaceholderPanel" unique_id=493207209]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 8
+
+[node name="RewardLayout" type="VBoxContainer" parent="ResultOverlayLayer/ResultOverlay/ResultCenter/ResultPanel/ResultMargin/ResultLayout/RewardPlaceholderPanel/RewardMargin" unique_id=898290424]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="RewardLabel" type="Label" parent="ResultOverlayLayer/ResultOverlay/ResultCenter/ResultPanel/ResultMargin/ResultLayout/RewardPlaceholderPanel/RewardMargin/RewardLayout" unique_id=862523463]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Choose a reward."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RewardChoiceGrid" type="GridContainer" parent="ResultOverlayLayer/ResultOverlay/ResultCenter/ResultPanel/ResultMargin/ResultLayout/RewardPlaceholderPanel/RewardMargin/RewardLayout" unique_id=662599394]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="MaterialRewardButton" type="Button" parent="ResultOverlayLayer/ResultOverlay/ResultCenter/ResultPanel/ResultMargin/ResultLayout/RewardPlaceholderPanel/RewardMargin/RewardLayout/RewardChoiceGrid" unique_id=349235972]
+custom_minimum_size = Vector2(220, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Material"
+
+[node name="CardRewardButton" type="Button" parent="ResultOverlayLayer/ResultOverlay/ResultCenter/ResultPanel/ResultMargin/ResultLayout/RewardPlaceholderPanel/RewardMargin/RewardLayout/RewardChoiceGrid" unique_id=430345978]
+custom_minimum_size = Vector2(220, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Card"
+
+[node name="ClueRewardButton" type="Button" parent="ResultOverlayLayer/ResultOverlay/ResultCenter/ResultPanel/ResultMargin/ResultLayout/RewardPlaceholderPanel/RewardMargin/RewardLayout/RewardChoiceGrid" unique_id=137202330]
+custom_minimum_size = Vector2(220, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Clue"
+
+[node name="SkipRewardButton" type="Button" parent="ResultOverlayLayer/ResultOverlay/ResultCenter/ResultPanel/ResultMargin/ResultLayout/RewardPlaceholderPanel/RewardMargin/RewardLayout/RewardChoiceGrid" unique_id=693127224]
+custom_minimum_size = Vector2(220, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Skip"
+
+[node name="ResultActionHintLabel" type="Label" parent="ResultOverlayLayer/ResultOverlay/ResultCenter/ResultPanel/ResultMargin/ResultLayout" unique_id=1844166990]
+layout_mode = 2
+text = "Awaiting battle resolution."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="DefeatContinueButton" type="Button" parent="ResultOverlayLayer/ResultOverlay/ResultCenter/ResultPanel/ResultMargin/ResultLayout" unique_id=1290845411]
+custom_minimum_size = Vector2(220, 36)
+layout_mode = 2
+text = "Acknowledge Defeat"

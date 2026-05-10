@@ -1,0 +1,43 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="magic_game"
+run/main_scene="res://scenes/root/game_root.tscn"
+config/features=PackedStringArray("4.6", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://scripts/managers/game_manager.gd"
+SceneManager="*res://scripts/managers/scene_manager.gd"
+InventoryManager="*res://scripts/managers/inventory_manager.gd"
+CardManager="*res://scripts/managers/card_manager.gd"
+MaterialManager="*res://scripts/managers/material_manager.gd"
+MagicCircleManager="*res://scripts/managers/magic_circle_manager.gd"
+BattleManager="*res://scripts/managers/battle_manager.gd"
+RealmLoadoutManager="*res://scripts/managers/realm_loadout_manager.gd"
+SaveManager="*res://scripts/managers/save_manager.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"

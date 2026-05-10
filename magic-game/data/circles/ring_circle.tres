@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MagicCircleTemplate" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/magic_circle_template.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+sort_order = 40
+template_id = "ring"
+display_name = "Ring Circle"
+summary = "Five-point loop that keeps power moving around the circle."
+available_in_lab = true
+circle_order = 1
+node_positions = Array[Vector2]([Vector2(0, -128), Vector2(122, -36), Vector2(76, 112), Vector2(-76, 112), Vector2(-122, -36)])
+edge_pairs = Array[String](["A:B", "B:C", "C:D", "D:E", "E:A"])
+bonus_tags = Array[String](["loop", "circulation"])
+default_action_point_cost = 1

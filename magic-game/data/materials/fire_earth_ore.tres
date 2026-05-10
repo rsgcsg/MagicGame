@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="MaterialData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/material_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+sort_order = 50
+material_id = "fire_earth_ore"
+display_name = "Fire-Earth Ore"
+button_label = "Fire-Earth Ore"
+short_label = "F/E"
+descriptor = "A heavy ore with furnace heat trapped inside, useful for forceful stable blends."
+icon_path = ""
+rarity = "uncommon"
+stability = "stable"
+shop_buy_price = 14
+shop_sell_price = 7
+fire = 36
+water = 0
+earth = 28
+wind = -6

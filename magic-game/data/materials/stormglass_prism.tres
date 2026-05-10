@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="MaterialData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/material_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+sort_order = 100
+material_id = "stormglass_prism"
+display_name = "Stormglass Prism"
+button_label = "Stormglass"
+short_label = "S/P"
+descriptor = "A rare prismatic shard with sharp wind-water amplification and high alchemical value."
+icon_path = ""
+rarity = "rare"
+stability = "refined"
+shop_buy_price = 20
+shop_sell_price = 10
+fire = -4
+water = 30
+earth = 4
+wind = 34

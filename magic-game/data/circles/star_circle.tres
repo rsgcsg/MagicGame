@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MagicCircleTemplate" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/magic_circle_template.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+sort_order = 50
+template_id = "star"
+display_name = "Star Circle"
+summary = "Central hub that redistributes four outer spokes."
+available_in_lab = true
+circle_order = 1
+node_positions = Array[Vector2]([Vector2(0, 0), Vector2(0, -126), Vector2(126, 0), Vector2(0, 126), Vector2(-126, 0)])
+edge_pairs = Array[String](["A:B", "A:C", "A:D", "A:E"])
+bonus_tags = Array[String](["hub", "transfer"])
+default_action_point_cost = 1

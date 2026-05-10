@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://dmix1k5esi2dh"]
+
+[ext_resource type="Script" uid="uid://chjwh1mqch02w" path="res://scripts/raw_material_shop/raw_material_shop_scene.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/ui/top_status_bar.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://cg6pa0hhed6yw" path="res://assets/images/raw_material_shop/Image_20260510110933_5247_220.jpg" id="2_iduyg"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(0.63, 0.36, 0.12, 0.94)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.14, 0.08, 0.03, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.25)
+shadow_size = 4
+
+[node name="RawMaterialShopScene" type="Control" unique_id=1118178990]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1723497081]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundTexture" type="TextureRect" parent="." unique_id=314831183]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_iduyg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Shading" type="ColorRect" parent="." unique_id=2049978633]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.12)
+
+[node name="Content" type="Control" parent="." unique_id=1150810586]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopStatusBar" parent="Content" unique_id=1123333435 instance=ExtResource("2")]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 1248.0
+offset_bottom = 64.0
+
+[node name="HintLabel" type="Label" parent="Content" unique_id=2140088782]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 88.0
+offset_right = 886.0
+offset_bottom = 134.0
+theme_override_font_sizes/font_size = 24
+text = "Speak to the shopkeeper to trade magical materials"
+horizontal_alignment = 1
+
+[node name="ShopkeeperArea" type="PanelContainer" parent="Content" unique_id=370841169]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 400.0
+offset_right = 774.0
+offset_bottom = 493.0
+theme_override_styles/panel = SubResource("1")
+
+[node name="Margin" type="MarginContainer" parent="Content/ShopkeeperArea" unique_id=2054352651]
+layout_mode = 2
+
+[node name="Layout" type="VBoxContainer" parent="Content/ShopkeeperArea/Margin" unique_id=421989762]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="ShopkeeperHintLabel" type="Label" parent="Content/ShopkeeperArea/Margin/Layout" unique_id=980937409]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Shopkeeper"
+horizontal_alignment = 1
+
+[node name="SubHintLabel" type="Label" parent="Content/ShopkeeperArea/Margin/Layout" unique_id=975572893]
+layout_mode = 2
+text = "Buy and sell magical materials"
+horizontal_alignment = 1
+
+[node name="ShopkeeperButton" type="Button" parent="Content/ShopkeeperArea" unique_id=495103015]
+layout_mode = 2
+flat = true
+
+[node name="ReturnToTown" type="PanelContainer" parent="Content" unique_id=1818270576]
+layout_mode = 0
+offset_left = 1000.0
+offset_top = 564.0
+offset_right = 1224.0
+offset_bottom = 664.0
+theme_override_styles/panel = SubResource("1")
+
+[node name="Margin" type="MarginContainer" parent="Content/ReturnToTown" unique_id=836892193]
+layout_mode = 2
+
+[node name="Layout" type="VBoxContainer" parent="Content/ReturnToTown/Margin" unique_id=717669141]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="IconLabel" type="Label" parent="Content/ReturnToTown/Margin/Layout" unique_id=1290195174]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Town >"
+horizontal_alignment = 1
+
+[node name="TextLabel" type="Label" parent="Content/ReturnToTown/Margin/Layout" unique_id=2142753947]
+layout_mode = 2
+text = "Return to Town"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Content/ReturnToTown" unique_id=1350617810]
+layout_mode = 2
+flat = true
+
+[node name="FooterLabel" type="Label" parent="Content" unique_id=653048323]
+modulate = Color(0.8, 0.73, 0.62, 1)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 676.0
+offset_right = 604.0
+offset_bottom = 706.0
+text = "Placeholder trade flow only. Real stock and pricing are deferred."
+
+[node name="PopupLayer" type="Control" parent="." unique_id=1912707922]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

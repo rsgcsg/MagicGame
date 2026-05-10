@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://b0rjytkxwpwri"]
+
+[ext_resource type="PackedScene" path="res://scenes/battle/card_view.tscn" id="1"]
+[ext_resource type="Script" uid="uid://0k1yer2yy2yd" path="res://scripts/ui/generated_card_view.gd" id="2"]
+
+[node name="GeneratedCardView" unique_id=31066628 instance=ExtResource("1")]
+custom_minimum_size = Vector2(100, 120)
+offset_right = 104.0
+offset_bottom = 120.0
+script = ExtResource("2")
+action_point_cost = 1
+body_text = "Generated card placeholder effect."
+single_use = true
+compact_mode = false
+detail_click_enabled = true
+
+[node name="Layout" parent="Margin" index="0"]
+size_flags_vertical = 1
+
+[node name="ArtPanel" parent="Margin/Layout" index="0"]
+custom_minimum_size = Vector2(0, 50)
+size_flags_vertical = 1
+
+[node name="CostBadge" parent="Margin/Layout/ArtPanel" index="1"]
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 22.0
+offset_bottom = 22.0
+
+[node name="CostMargin" parent="Margin/Layout/ArtPanel/CostBadge" index="0"]
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 1
+
+[node name="DescriptionPanel" parent="Margin/Layout" index="2"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 34)
+size_flags_vertical = 1
+
+[node name="DescriptionMargin" parent="Margin/Layout/DescriptionPanel" index="0"]
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="EffectLabel" type="Label" parent="Margin/Layout/DescriptionPanel/DescriptionMargin" index="0" unique_id=215954019]
+modulate = Color(0.16, 0.1, 0.06, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "Deal placeholder damage."
+autowrap_mode = 3
+clip_text = true

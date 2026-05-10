@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="MaterialData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/material_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+sort_order = 72
+material_id = "cinder_petal"
+display_name = "Cinder Petal"
+button_label = "Cinder Petal"
+short_label = "C/P"
+descriptor = "A heat-dried petal with quick fire lift and a little unstable wind bleed."
+icon_path = ""
+rarity = "uncommon"
+stability = "volatile"
+shop_buy_price = 14
+shop_sell_price = 7
+fire = 30
+water = -1
+earth = 4
+wind = 16

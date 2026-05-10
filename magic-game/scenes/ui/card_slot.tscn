@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/card_slot.gd" id="1"]
+
+[node name="CardSlot" type="Button"]
+custom_minimum_size = Vector2(120, 168)
+script = ExtResource("1")

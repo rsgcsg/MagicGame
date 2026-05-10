@@ -1,0 +1,197 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/realm_guild/realm_selection_window.gd" id="1"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(0.77, 0.53, 0.25, 0.98)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.14, 0.08, 0.03, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="RealmSelectionWindow" type="PanelContainer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Backdrop" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.38)
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 180.0
+offset_top = 110.0
+offset_right = -180.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PopupPanel" type="PanelContainer" parent="Margin"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("1")
+
+[node name="InnerMargin" type="MarginContainer" parent="Margin/PopupPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Layout" type="VBoxContainer" parent="Margin/PopupPanel/InnerMargin"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Header" type="HBoxContainer" parent="Margin/PopupPanel/InnerMargin/Layout"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="Margin/PopupPanel/InnerMargin/Layout/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "Realm Selection Window"
+
+[node name="CloseButton" type="Button" parent="Margin/PopupPanel/InnerMargin/Layout/Header"]
+layout_mode = 2
+text = "Close"
+
+[node name="BodyRow" type="HBoxContainer" parent="Margin/PopupPanel/InnerMargin/Layout"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="RealmList" type="PanelContainer" parent="Margin/PopupPanel/InnerMargin/Layout/BodyRow"]
+custom_minimum_size = Vector2(260, 300)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Margin" type="MarginContainer" parent="Margin/PopupPanel/InnerMargin/Layout/BodyRow/RealmList"]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 14
+
+[node name="Layout" type="VBoxContainer" parent="Margin/PopupPanel/InnerMargin/Layout/BodyRow/RealmList/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TitleLabel" type="Label" parent="Margin/PopupPanel/InnerMargin/Layout/BodyRow/RealmList/Margin/Layout"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Available Realms"
+
+[node name="RealmEntry1" type="Label" parent="Margin/PopupPanel/InnerMargin/Layout/BodyRow/RealmList/Margin/Layout"]
+layout_mode = 2
+text = "Training Cavern"
+
+[node name="RealmEntry2" type="Label" parent="Margin/PopupPanel/InnerMargin/Layout/BodyRow/RealmList/Margin/Layout"]
+layout_mode = 2
+text = "Crystal Tunnel"
+
+[node name="RealmEntry3" type="Label" parent="Margin/PopupPanel/InnerMargin/Layout/BodyRow/RealmList/Margin/Layout"]
+layout_mode = 2
+text = "Ancient Hollow"
+
+[node name="RealmDetails" type="PanelContainer" parent="Margin/PopupPanel/InnerMargin/Layout/BodyRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Margin" type="MarginContainer" parent="Margin/PopupPanel/InnerMargin/Layout/BodyRow/RealmDetails"]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 14
+
+[node name="Layout" type="VBoxContainer" parent="Margin/PopupPanel/InnerMargin/Layout/BodyRow/RealmDetails/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TitleLabel" type="Label" parent="Margin/PopupPanel/InnerMargin/Layout/BodyRow/RealmDetails/Margin/Layout"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Realm Details"
+
+[node name="DetailsLabel" type="Label" parent="Margin/PopupPanel/InnerMargin/Layout/BodyRow/RealmDetails/Margin/Layout"]
+layout_mode = 2
+text = "Training Cavern\nA beginner-friendly realm with simple routes and basic rewards."
+autowrap_mode = 3
+
+[node name="LoadoutDivider" type="HSeparator" parent="Margin/PopupPanel/InnerMargin/Layout/BodyRow/RealmDetails/Margin/Layout"]
+layout_mode = 2
+
+[node name="LoadoutSummaryLabel" type="Label" parent="Margin/PopupPanel/InnerMargin/Layout/BodyRow/RealmDetails/Margin/Layout"]
+layout_mode = 2
+text = "Realm Loadout: 0/10 selected"
+autowrap_mode = 3
+
+[node name="LoadoutHintLabel" type="Label" parent="Margin/PopupPanel/InnerMargin/Layout/BodyRow/RealmDetails/Margin/Layout"]
+layout_mode = 2
+text = "Choose generated cards from the external bag to copy into the next realm run."
+autowrap_mode = 3
+
+[node name="LoadoutScroll" type="ScrollContainer" parent="Margin/PopupPanel/InnerMargin/Layout/BodyRow/RealmDetails/Margin/Layout"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LoadoutContent" type="VBoxContainer" parent="Margin/PopupPanel/InnerMargin/Layout/BodyRow/RealmDetails/Margin/Layout/LoadoutScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="LoadoutEmptyLabel" type="Label" parent="Margin/PopupPanel/InnerMargin/Layout/BodyRow/RealmDetails/Margin/Layout/LoadoutScroll/LoadoutContent"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "No generated cards selected yet."
+autowrap_mode = 3
+
+[node name="SelectedCardList" type="HFlowContainer" parent="Margin/PopupPanel/InnerMargin/Layout/BodyRow/RealmDetails/Margin/Layout/LoadoutScroll/LoadoutContent"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+
+[node name="OpenCardBagButton" type="Button" parent="Margin/PopupPanel/InnerMargin/Layout/BodyRow/RealmDetails/Margin/Layout"]
+custom_minimum_size = Vector2(200, 38)
+layout_mode = 2
+text = "Open Generated Card Bag"
+
+[node name="StatusLabel" type="Label" parent="Margin/PopupPanel/InnerMargin/Layout"]
+layout_mode = 2
+text = "No cards selected yet. Starting now will enter the realm with an empty expedition card set."
+autowrap_mode = 3
+
+[node name="StartExpedition" type="Button" parent="Margin/PopupPanel/InnerMargin/Layout"]
+custom_minimum_size = Vector2(220, 48)
+layout_mode = 2
+text = "Start Expedition"
+
+[node name="PopupLayer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

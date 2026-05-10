@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="MaterialData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/material_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+sort_order = 40
+material_id = "wind_feather"
+display_name = "Wind Feather"
+button_label = "Wind Feather"
+short_label = "WND"
+descriptor = "A light reactive feather that boosts swift and airy circle resonance."
+icon_path = ""
+rarity = "common"
+stability = "stable"
+shop_buy_price = 8
+shop_sell_price = 4
+fire = 8
+water = 0
+earth = 4
+wind = 48

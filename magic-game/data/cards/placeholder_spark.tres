@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/card_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+card_id = "placeholder_spark"
+display_name = "Placeholder Spark"
+description = "Starter card data for architecture verification."
+action_point_cost = 1
+single_use = true
+icon_path = "res://assets/placeholders/placeholder_card_spark.png"
+effect_lines = Array[String](["Deal 6 damage"])

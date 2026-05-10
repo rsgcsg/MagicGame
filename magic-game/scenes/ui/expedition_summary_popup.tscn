@@ -1,0 +1,81 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/expedition_summary_popup.gd" id="1"]
+
+[node name="ExpeditionSummaryPopup" type="PanelContainer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Backdrop" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.42)
+
+[node name="BackdropMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 190.0
+offset_top = 120.0
+offset_right = -190.0
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PopupPanel" type="PanelContainer" parent="BackdropMargin"]
+layout_mode = 2
+
+[node name="InnerMargin" type="MarginContainer" parent="BackdropMargin/PopupPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 18
+
+[node name="Layout" type="VBoxContainer" parent="BackdropMargin/PopupPanel/InnerMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Header" type="HBoxContainer" parent="BackdropMargin/PopupPanel/InnerMargin/Layout"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="BackdropMargin/PopupPanel/InnerMargin/Layout/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 26
+text = "Expedition Summary"
+
+[node name="SubTitleLabel" type="Label" parent="BackdropMargin/PopupPanel/InnerMargin/Layout"]
+layout_mode = 2
+text = "The expedition ended. Review what returned and what was lost."
+autowrap_mode = 3
+
+[node name="BodyScroll" type="ScrollContainer" parent="BackdropMargin/PopupPanel/InnerMargin/Layout"]
+custom_minimum_size = Vector2(0, 220)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DetailsLabel" type="Label" parent="BackdropMargin/PopupPanel/InnerMargin/Layout/BodyScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Recovered Cards: 0"
+autowrap_mode = 3
+
+[node name="FooterRow" type="HBoxContainer" parent="BackdropMargin/PopupPanel/InnerMargin/Layout"]
+layout_mode = 2
+alignment = 2
+
+[node name="CloseButton" type="Button" parent="BackdropMargin/PopupPanel/InnerMargin/Layout/FooterRow"]
+custom_minimum_size = Vector2(96, 36)
+layout_mode = 2
+text = "Close"

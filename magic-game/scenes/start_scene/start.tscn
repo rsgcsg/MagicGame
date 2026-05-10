@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://lr5d8ppyneuc"]
+
+[ext_resource type="Texture2D" uid="uid://cx5u0qttm265a" path="res://assets/images/shop/handshop.jpg" id="1_6i72a"]
+[ext_resource type="Script" uid="uid://dsj540b6x30pt" path="res://scenes/start_scene/start.gd" id="1_rj43e"]
+[ext_resource type="FontFile" uid="uid://dn6k3wvx7uupf" path="res://assets/fonts/alagard.ttf" id="3_coeby"]
+[ext_resource type="Texture2D" uid="uid://fsydm1m8yrq2" path="res://assets/images/texture/antique-wall-with-stains.jpg" id="4_f5cb1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n8vll"]
+font = ExtResource("3_coeby")
+font_size = 72
+font_color = Color(0.9798271, 0.9449003, 0.6919953, 1)
+outline_size = 2
+outline_color = Color(0.101960786, 0.078431375, 0.05882353, 1)
+shadow_color = Color(0, 0, 0, 0.8117647)
+shadow_offset = Vector2(2, 3)
+
+[node name="Start" type="Control" unique_id=1028143964]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rj43e")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=938195145]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_6i72a")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="UI" type="Control" parent="." unique_id=1910967343]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="UI" unique_id=1979913125]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -294.0
+offset_top = 211.0
+offset_right = 319.0
+offset_bottom = 296.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 76
+text = "Arcane Workshop"
+label_settings = SubResource("LabelSettings_n8vll")
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UI/TitleLabel" unique_id=1793532996]
+visible = false
+modulate = Color(1, 1, 1, 0.9490196)
+self_modulate = Color(0.9411765, 0.92156863, 0.88235295, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -28.500002
+offset_right = 1671.1665
+offset_bottom = 183.33331
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_f5cb1")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI" unique_id=1135154196]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -4.5
+offset_right = 100.0
+offset_bottom = 140.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="StartButton" type="Button" parent="UI/VBoxContainer" unique_id=1505423000]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9193306, 0.87453914, 0.7336551, 1)
+theme_override_colors/font_focus_color = Color(0.9490196, 0.9490196, 0.9490196, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0.9490196, 1)
+theme_override_fonts/font = ExtResource("3_coeby")
+theme_override_font_sizes/font_size = 52
+text = "Start"
+flat = true
+
+[node name="ExitButton" type="Button" parent="UI/VBoxContainer" unique_id=2023575197]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9098039, 0.8784314, 0.7176471, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_coeby")
+theme_override_font_sizes/font_size = 44
+text = "Exit"
+flat = true

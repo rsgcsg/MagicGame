@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="MaterialData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/material_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+sort_order = 10
+material_id = "fire_crystal"
+display_name = "Fire Crystal"
+button_label = "Fire Crystal"
+short_label = "FIR"
+descriptor = "A common ember-rich crystal used for direct fire-aligned circle output."
+icon_path = ""
+rarity = "common"
+stability = "stable"
+shop_buy_price = 8
+shop_sell_price = 4
+fire = 48
+water = 0
+earth = 8
+wind = 4

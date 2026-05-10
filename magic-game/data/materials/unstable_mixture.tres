@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="MaterialData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/material_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+sort_order = 70
+material_id = "unstable_mixture"
+display_name = "Unstable Mixture"
+button_label = "Unstable Mix"
+short_label = "UNS"
+descriptor = "A volatile slurry with conflicting properties. Powerful, but prone to awkward reactions."
+icon_path = ""
+rarity = "rare"
+stability = "unstable"
+shop_buy_price = 18
+shop_sell_price = 9
+fire = 30
+water = -12
+earth = 16
+wind = 26

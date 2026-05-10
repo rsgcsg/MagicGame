@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MagicCircleTemplate" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/magic_circle_template.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+sort_order = 80
+template_id = "wheel"
+display_name = "Wheel Circle"
+summary = "Seven-point hub-and-ring form for broader circulation and transfer."
+available_in_lab = true
+circle_order = 1
+node_positions = Array[Vector2]([Vector2(0, 0), Vector2(0, -150), Vector2(128, -76), Vector2(128, 76), Vector2(0, 150), Vector2(-128, 76), Vector2(-128, -76)])
+edge_pairs = Array[String](["A:B", "A:C", "A:D", "A:E", "A:F", "A:G", "B:C", "C:D", "D:E", "E:F", "F:G", "G:B"])
+bonus_tags = Array[String](["large", "hub", "circulation"])
+default_action_point_cost = 1

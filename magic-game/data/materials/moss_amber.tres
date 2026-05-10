@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="MaterialData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/material_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+sort_order = 90
+material_id = "moss_amber"
+display_name = "Moss Amber"
+button_label = "Moss Amber"
+short_label = "M/A"
+descriptor = "A resinous earth-water hybrid favored for patient, restorative circle balances."
+icon_path = ""
+rarity = "uncommon"
+stability = "stable"
+shop_buy_price = 15
+shop_sell_price = 7
+fire = 0
+water = 24
+earth = 34
+wind = 6

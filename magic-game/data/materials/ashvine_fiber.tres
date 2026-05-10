@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="MaterialData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/material_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+sort_order = 58
+material_id = "ashvine_fiber"
+display_name = "Ashvine Fiber"
+button_label = "Ashvine Fiber"
+short_label = "ASH"
+descriptor = "A soot-stained vine fiber that supports sturdy fire-earth blends without being fully pure."
+icon_path = ""
+rarity = "common"
+stability = "stable"
+shop_buy_price = 10
+shop_sell_price = 5
+fire = 24
+water = 2
+earth = 16
+wind = 12

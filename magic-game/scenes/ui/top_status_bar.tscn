@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/top_status_bar.gd" id="1"]
+
+[node name="TopStatusBar" type="HBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+script = ExtResource("1")
+theme_override_constants/separation = 16
+
+[node name="ManaLabel" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+clip_text = true
+text = "Mana 0/0"
+
+[node name="MaterialsLabel" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+clip_text = true
+text = "Materials 0"
+
+[node name="GeneratedCardsLabel" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+clip_text = true
+text = "Generated Cards 0"
+
+[node name="GoldLabel" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+clip_text = true
+text = "Gold 0"
+
+[node name="Spacer" type="Control" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SettingsButton" type="Button" parent="."]
+layout_mode = 2
+disabled = true
+text = "Settings"
+
+[node name="CardBagButton" type="Button" parent="."]
+layout_mode = 2
+text = "Backpack"

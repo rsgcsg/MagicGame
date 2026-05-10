@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MagicCircleTemplate" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/magic_circle_template.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+sort_order = 10
+template_id = "line"
+display_name = "Line Circle"
+summary = "Three-point linear channel for direct focused output."
+available_in_lab = true
+circle_order = 1
+node_positions = Array[Vector2]([Vector2(-140, 0), Vector2(0, 0), Vector2(140, 0)])
+edge_pairs = Array[String](["A:B", "B:C"])
+bonus_tags = Array[String](["starter", "focused"])
+default_action_point_cost = 1

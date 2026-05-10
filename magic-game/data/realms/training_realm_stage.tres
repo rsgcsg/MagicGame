@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="RealmStageData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/realm_stage_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+stage_id = "training_stage_01"
+realm_id = "training_realm"
+start_node_id = "start"
+boss_node_id = "boss_01"
+node_ids = Array[String](["start", "battle_01", "rest_01", "boss_01"])
+stage_reward_summary = "Placeholder materials and reputation."

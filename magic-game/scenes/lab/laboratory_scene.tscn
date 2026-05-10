@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://kd45u7jc31f8"]
+
+[ext_resource type="Script" uid="uid://d8m3j34aoiml" path="res://scripts/lab/laboratory_scene.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/ui/top_status_bar.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://biboc7siqxt3p" path="res://assets/images/lab/Image_20260509184616_5156_220.jpg" id="2_7tbbj"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(0.63, 0.36, 0.12, 0.94)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.14, 0.08, 0.03, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.25)
+shadow_size = 4
+
+[node name="LaboratoryScene" type="Control" unique_id=1321520316]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Background" type="TextureRect" parent="." unique_id=2018154245]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7tbbj")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Shading" type="ColorRect" parent="." unique_id=1016621254]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.14)
+
+[node name="Content" type="Control" parent="." unique_id=137928596]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopStatusBar" parent="Content" unique_id=874171125 instance=ExtResource("2")]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 1248.0
+offset_bottom = 64.0
+
+[node name="HintLabel" type="Label" parent="Content" unique_id=1285757724]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 94.0
+offset_right = 884.0
+offset_bottom = 140.0
+theme_override_font_sizes/font_size = 24
+text = "A quiet room for magical research and card crafting"
+horizontal_alignment = 1
+
+[node name="BackToShop" type="PanelContainer" parent="Content" unique_id=392650181]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 600.0
+offset_right = 304.0
+offset_bottom = 680.0
+theme_override_styles/panel = SubResource("1")
+
+[node name="Margin" type="MarginContainer" parent="Content/BackToShop" unique_id=1215369256]
+layout_mode = 2
+
+[node name="Layout" type="HBoxContainer" parent="Content/BackToShop/Margin" unique_id=503969282]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="IconLabel" type="Label" parent="Content/BackToShop/Margin/Layout" unique_id=531410135]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "< Shop"
+
+[node name="TextLabel" type="Label" parent="Content/BackToShop/Margin/Layout" unique_id=431075289]
+layout_mode = 2
+text = "Back to Shop"
+
+[node name="Button" type="Button" parent="Content/BackToShop" unique_id=1732019184]
+layout_mode = 2
+flat = true
+
+[node name="AlchemyTable" type="PanelContainer" parent="Content" unique_id=1974320805]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 371.0
+offset_right = 775.0
+offset_bottom = 458.0
+theme_override_styles/panel = SubResource("1")
+
+[node name="Margin" type="MarginContainer" parent="Content/AlchemyTable" unique_id=426202662]
+layout_mode = 2
+
+[node name="Layout" type="VBoxContainer" parent="Content/AlchemyTable/Margin" unique_id=1324561140]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="IconLabel" type="Label" parent="Content/AlchemyTable/Margin/Layout" unique_id=1392955813]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Alchemy Circle"
+horizontal_alignment = 1
+
+[node name="TextLabel" type="Label" parent="Content/AlchemyTable/Margin/Layout" unique_id=1896491516]
+layout_mode = 2
+text = "Alchemy Table"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Content/AlchemyTable" unique_id=330948604]
+layout_mode = 2
+flat = true
+
+[node name="FooterLabel" type="Label" parent="Content" unique_id=912498915]
+modulate = Color(0.8, 0.73, 0.62, 1)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 684.0
+offset_right = 632.0
+offset_bottom = 712.0
+text = "Prototype flow: open the Alchemy Table and inspect the crafting workspace."
+
+[node name="PopupLayer" type="Control" parent="." unique_id=1834433291]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

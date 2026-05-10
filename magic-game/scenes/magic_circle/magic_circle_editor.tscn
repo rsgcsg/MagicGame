@@ -1,0 +1,233 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/magic_circle/magic_circle_editor.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/magic_circle/circle_node_slot.tscn" id="2"]
+[ext_resource type="Script" path="res://scripts/magic_circle/magic_circle_connection_layer.gd" id="3"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(0.12, 0.09, 0.13, 0.98)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.46, 0.29, 0.58, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="2"]
+bg_color = Color(0.06, 0.045, 0.075, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.64, 0.43, 0.76, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="MagicCircleEditor" type="PanelContainer"]
+custom_minimum_size = Vector2(480, 470)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("1")
+script = ExtResource("1")
+
+[node name="EditorMargin" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 12
+
+[node name="EditorLayout" type="VBoxContainer" parent="EditorMargin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Header" type="HBoxContainer" parent="EditorMargin/EditorLayout"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TemplateTitleLabel" type="Label" parent="EditorMargin/EditorLayout/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.92, 0.82, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "Triangle Circle"
+
+[node name="EditorStateLabel" type="Label" parent="EditorMargin/EditorLayout/Header"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.74, 0.66, 0.82, 1)
+text = "Dormant imprint"
+
+[node name="GraphArea" type="PanelContainer" parent="EditorMargin/EditorLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("2")
+
+[node name="GraphCanvas" type="Control" parent="EditorMargin/EditorLayout/GraphArea"]
+custom_minimum_size = Vector2(0, 360)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ConnectionLayer" type="Control" parent="EditorMargin/EditorLayout/GraphArea/GraphCanvas"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3")
+
+[node name="ConnectionHintLabel" type="Label" parent="EditorMargin/EditorLayout/GraphArea/GraphCanvas/ConnectionLayer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -12.0
+offset_right = 96.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+modulate = Color(0.82, 0.68, 1, 0.48)
+text = "binding lines"
+horizontal_alignment = 1
+
+[node name="NodeLayer" type="Control" parent="EditorMargin/EditorLayout/GraphArea/GraphCanvas"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NodeA" parent="EditorMargin/EditorLayout/GraphArea/GraphCanvas/NodeLayer" instance=ExtResource("2")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -138.0
+offset_right = 36.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 2
+node_id = "node_0"
+
+[node name="NodeB" parent="EditorMargin/EditorLayout/GraphArea/GraphCanvas/NodeLayer" instance=ExtResource("2")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = 70.0
+offset_right = -78.0
+offset_bottom = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+node_id = "node_1"
+
+[node name="NodeC" parent="EditorMargin/EditorLayout/GraphArea/GraphCanvas/NodeLayer" instance=ExtResource("2")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 78.0
+offset_top = 70.0
+offset_right = 150.0
+offset_bottom = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+node_id = "node_2"
+
+[node name="NodeD" parent="EditorMargin/EditorLayout/GraphArea/GraphCanvas/NodeLayer" instance=ExtResource("2")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 78.0
+offset_top = -36.0
+offset_right = 150.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+node_id = "node_3"
+
+[node name="NodeE" parent="EditorMargin/EditorLayout/GraphArea/GraphCanvas/NodeLayer" instance=ExtResource("2")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -36.0
+offset_right = -78.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+node_id = "node_4"
+
+[node name="NodeF" parent="EditorMargin/EditorLayout/GraphArea/GraphCanvas/NodeLayer" instance=ExtResource("2")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = 124.0
+offset_right = 36.0
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+node_id = "node_5"
+
+[node name="NodeG" parent="EditorMargin/EditorLayout/GraphArea/GraphCanvas/NodeLayer" instance=ExtResource("2")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -196.0
+offset_right = 36.0
+offset_bottom = -124.0
+grow_horizontal = 2
+grow_vertical = 2
+node_id = "node_6"
+
+[node name="Footer" type="HBoxContainer" parent="EditorMargin/EditorLayout"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="SelectedNodeLabel" type="Label" parent="EditorMargin/EditorLayout/Footer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.74, 0.66, 0.82, 1)
+text = "No node selected"
+
+[node name="ClearNodeButton" type="Button" parent="EditorMargin/EditorLayout/Footer"]
+custom_minimum_size = Vector2(112, 34)
+layout_mode = 2
+disabled = true
+text = "Clear Node"

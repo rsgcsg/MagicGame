@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MagicCircleTemplate" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/magic_circle_template.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+sort_order = 60
+template_id = "fork"
+display_name = "Fork Circle"
+summary = "A branching four-point form that splits one source into three channels."
+available_in_lab = true
+circle_order = 1
+node_positions = Array[Vector2]([Vector2(0, -118), Vector2(-126, 64), Vector2(0, 20), Vector2(126, 64)])
+edge_pairs = Array[String](["A:B", "A:C", "A:D"])
+bonus_tags = Array[String](["branch", "split"])
+default_action_point_cost = 1
